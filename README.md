@@ -4,6 +4,10 @@ git clone https://github.com/PitonX60/litebox.git
 ```
 
 ```
+cd litebox
+```
+
+```
 docker-compose up -d
 ```
 
