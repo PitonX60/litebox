@@ -1,0 +1,12 @@
+django~=2.2.17
+djangorestframework~=3.12.2
+requests~=2.25.0
+django-extensions~=3.0.9
+django-autofixture~=0.12.1
+django-cors-headers~=3.5.0
+fdb~=2.0.1
+drf-yasg
+
+# ставим вручную
+# pip install https://github.com/maxirobaina/django-firebird/archive/stable/2.2.x.zip
+# pip install https://github.com/PitonX60/django-firebird/archive/v2.2.a1.fork.zip

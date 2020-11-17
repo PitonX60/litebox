@@ -1,0 +1,75 @@
+GET http://localhost:8000/api/docs
+Accept: application/json
+Authorization: Token abcb488a840c7d4dda0148651e16a7227a2beb69
+
+###
+
+GET http://localhost:8000/api/docs/14
+Accept: application/json
+Authorization: Token df237d13eee5d3795ec5d4cbe0a06fe797296fc2
+
+###
+
+# фильтр документов: период дат, тип документа, магазин, кто принял,
+GET http://localhost:8000/api/docs?start_date=2020-11-26&end_date=2020-11-30&type=14&shop=21&user=48
+Accept: application/json
+Authorization: Token df237d13eee5d3795ec5d4cbe0a06fe797296fc2
+
+###
+
+POST http://localhost:8000/api/docs/
+Content-Type: application/json
+Authorization: Token df237d13eee5d3795ec5d4cbe0a06fe797296fc2
+
+{
+  "type": 14,
+  "shop": 21,
+  "docgoods": [
+    {
+      "good": 62,
+      "quantity": 22
+    },
+    {
+      "good": 65,
+      "quantity": 2
+    },
+    {
+      "good": 67,
+      "quantity": 23
+    },
+    {
+      "good": 75,
+      "quantity": 88
+    }
+  ]
+}
+
+###
+
+PATCH http://localhost:8000/api/docs/2
+#PUT http://localhost:8000/api/docs/14
+Content-Type: application/json
+Authorization: Token bb0a8ebf25257042655b36f8d5d2505e1574745f
+
+{
+  "type": 2,
+
+  "docgoods": [
+    {
+      "id": 12,
+      "good": 12,
+      "quantity": 10000
+    },
+    {
+      "id": 60,
+      "good": 7,
+      "quantity": 3
+    }
+  ]
+}
+
+###
+
+DELETE http://localhost:8000/api/docs/14
+Content-Type: application/json
+Authorization: Token df237d13eee5d3795ec5d4cbe0a06fe797296fc2

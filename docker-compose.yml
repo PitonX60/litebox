@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  db:
+    restart: always
+    image: jacobalberty/firebird
+    environment:
+      ISC_PASSWORD: rootpass
+      FIREBIRD_DATABASE: django_firebird.fdb
+      FIREBIRD_USER: test
+      FIREBIRD_PASSWORD: test
+#    ports:
+#      - "3050:3050"
+    volumes:
+      - db_data:/firebird/data
+      - $HOME/.bash_history:/root/.bash_history
+      - /tmp:/tmp
+
+  app:
+    build:
+      context: .
+    image: litebox
+    restart: always
+    ports:
+      - "8005:8000"
+    volumes:
+      - $HOME/.ipython:/root/.ipython
+    environment:
+      - DEBUG=1
+      - IPYTHONDIR=/root/.ipython
+    depends_on:
+      - db
+    stdin_open: true
+#    command: python
+    command: python manage.py runserver 0.0.0.0:8000
+
+volumes:
+  db_data:

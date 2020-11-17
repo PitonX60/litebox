@@ -1,0 +1,39 @@
+GET http://localhost:8000/api/goods
+Accept: application/json
+Authorization: Token 976fb8cc6f4c63e63c7d34ae7c7cf13c1f60aeae
+
+###
+
+GET http://localhost:8000/api/goods?q=Товар+1
+Accept: application/json
+Authorization: Token df237d13eee5d3795ec5d4cbe0a06fe797296fc2
+
+###
+
+POST http://localhost:8000/api/goods/
+Content-Type: application/json
+Authorization: Token df237d13eee5d3795ec5d4cbe0a06fe797296fc2
+
+{
+  "name": "Новый ТОВАР 12",
+  "unit": 19
+}
+
+###
+
+#PUT http://localhost:8000/api/goods/80
+PATCH http://localhost:8000/api/goods/80
+Content-Type: application/json
+Authorization: Token df237d13eee5d3795ec5d4cbe0a06fe797296fc2
+
+{
+  "name": "Обновили товар"
+}
+
+###
+
+DELETE http://localhost:8000/api/goods/82
+Content-Type: application/json
+Authorization: Token df237d13eee5d3795ec5d4cbe0a06fe797296fc2
+
+###

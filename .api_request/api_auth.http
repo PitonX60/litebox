@@ -1,0 +1,9 @@
+POST http://localhost:8000/api/login/
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "litebox1234"
+}
+
+###

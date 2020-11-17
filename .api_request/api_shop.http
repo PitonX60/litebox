@@ -1,0 +1,37 @@
+GET http://localhost:8000/api/shops/
+Accept: application/json
+Authorization: Token abcb488a840c7d4dda0148651e16a7227a2beb69
+
+###
+
+GET http://localhost:8000/api/shops?q=новый
+Accept: application/json
+Authorization: Token df237d13eee5d3795ec5d4cbe0a06fe797296fc2
+
+###
+
+POST http://localhost:8000/api/shops/
+Content-Type: application/json
+Authorization: Token df237d13eee5d3795ec5d4cbe0a06fe797296fc2
+
+{
+  "name": "Новый магазин 777"
+}
+
+###
+
+PUT http://localhost:8000/api/shops/7
+Content-Type: application/json
+Authorization: Token be7a5cfe95da1731cdba0f2b70b5784facc761c7
+
+{
+  "name": "Новый магазин 32"
+}
+
+###
+
+DELETE http://localhost:8000/api/shops/34
+Content-Type: application/json
+Authorization: Token df237d13eee5d3795ec5d4cbe0a06fe797296fc2
+
+###
